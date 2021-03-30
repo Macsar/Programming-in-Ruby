@@ -4,11 +4,11 @@
 # каждого года выводит сумму, которую осталось выплатить.
 
 price_house = 500_000
-installment = 30
-monthly_payment = price_house / installment
+year = 30
+annual_payment = price_house / year
 balance = 0
 
-installment.times do |i|
-  balance += monthly_payment
+year.times do |i|
+  balance += annual_payment
   puts "Год #{i + 1}. Осталось выплатить: #{price_house - balance}$"
 end
