@@ -15,3 +15,36 @@
 # `launch(delay: 3, angle: 91)`
 # `launch(astronauts: [:belka])`
 # и т.д.
+
+def launch(options = {})
+  angle = options[:angle] || 90
+  astronaut = options[:astronauts] || [{ name: 'Белка' }, { name: 'Стрелка' }]
+  delay = options[:delay] || 5
+
+  controller(delay, astronaut, angle)
+end
+
+def controller(delay, astronaut, angel)
+  puts 'До запуска осталось:'
+
+  delay.downto(1) do |i|
+    puts i
+    sleep 1
+  end
+
+  if astronaut.length == 1
+    print "Астронавт запущен: #{astronaut[0][:name]}"
+  else
+    print 'Астронавты запущены: '
+
+    astronaut.length.times do |i|
+      print astronaut[i][:name]
+      print ', ' if astronaut[i + 1] != nil?
+    end
+  end
+
+  puts
+  puts "Угол запуска: #{angel}"
+end
+
+launch(delay: 3, angle: 91, astronauts: [{ name: 'Белка' }])
