@@ -1,23 +1,14 @@
 class Item
-  def initialize
-    @price = 300
-    @height = 300
+  def initialize(options)
+    @price = options[:price]
+    @weight = options[:weight]
   end
 
-  attr_accessor :price, :height
+  attr_accessor :price, :weight
 end
 
-item1 = Item.new
-item2 = Item.new
+item1 = Item.new({ weight: 20, price: 50 })
+item2 = Item.new({ weight: 30, price: 60 })
 
-item1.price = 10
-item1.height = 10
-
-item2.price = 20
-item2.height = 30
-
-p item1.price
-p item1.height
-
-p item2.price
-p item2.height
+p item1
+p item2
