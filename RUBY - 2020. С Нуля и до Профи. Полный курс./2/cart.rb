@@ -12,4 +12,11 @@ class Cart
   def remove_item
     @items.pop
   end
+
+  def validate
+    @items.each do |i|
+      # чекаем на наличие прайса
+      puts 'Item has no price' if i.price.nil?
+    end
+  end
 end
