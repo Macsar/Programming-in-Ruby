@@ -19,4 +19,9 @@ class Cart
       puts 'Item has no price' if i.price.nil?
     end
   end
+
+  # Метод для удаления item, оторые не содержат цены
+  def delete_invalid_items
+    @items.delete_if { |i| i.price.nil? }
+  end
 end
