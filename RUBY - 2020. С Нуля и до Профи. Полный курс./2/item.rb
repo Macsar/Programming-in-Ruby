@@ -1,9 +1,8 @@
 class Item
-  attr_accessor :price, :weight, :name
+  attr_accessor :price, :name
 
   def initialize(options = {})
     @price = options[:price]
-    @weight = options[:weight]
     @name = options[:name]
   end
 
@@ -12,7 +11,6 @@ class Item
     if block_given?
       # yield - генератор. Например, он выполняет блок, переданный ему
       yield price
-      yield weight
       yield name
     else
       puts 'Nothing to show'
