@@ -1,6 +1,9 @@
 class Item
   attr_accessor :price, :name
 
+  # переменная класса пишется через @@
+  @@discount = 0.1
+
   def initialize(options = {})
     @price = options[:price]
     @name = options[:name]
@@ -15,5 +18,19 @@ class Item
     else
       puts 'Nothing to show'
     end
+  end
+
+  # self означает, что метод можно вызвать не на объекте,
+  # а на самом классе
+  def self.discount
+    if Time.now.month == 4
+      @@discount += 0.3
+    else
+      @@discount
+    end
+  end
+
+  def price
+    @price - @price * self.class.discount
   end
 end
