@@ -6,4 +6,8 @@
 #
 # Потом выведите все три массива на экран.
 
+arr = ['Name 1', 'Name 2', 'Name 3']
+arr_2 = ['Name 4', 'Name 5', 'Name 6']
 
+arr_all = arr + arr_2
+puts arr_all.to_s
