@@ -20,7 +20,7 @@ class Cart
     end
   end
 
-  # Метод для удаления item, оторые не содержат цены
+  # Метод для удаления item, которые не содержат цены
   def delete_invalid_items
     @items.delete_if { |i| i.price.nil? }
   end
