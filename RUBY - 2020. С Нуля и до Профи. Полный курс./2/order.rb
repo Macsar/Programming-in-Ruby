@@ -3,10 +3,8 @@ require_relative 'item_container'
 # Заказ
 class Order
   attr_reader :items
-
   # Через :: мы обращаемся к вложенному модулю
-  include ItemContainer::Manager
-  include ItemContainer::Info
+  include ItemContainer
 
   def initialize
     @items = []
